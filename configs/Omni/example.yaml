@@ -1,0 +1,12 @@
+inherit_from: configs/Omni/omni.yaml
+
+data:
+  input_path: /path/to/equirectangular_sequence
+  output_path: /path/to/output/omni_scene
+  scene_name: omni_scene
+
+# Optional: request a different panorama resolution (must stay 2:1).
+# cam:
+#   H: 512
+#   W: 1024
+#   depth_scale: 1.0

@@ -1,0 +1,13 @@
+inherit_from: configs/TUM_RGBD/tum_rgbd.yaml
+data:
+  input_path: /mnt/data3/dataset/TUM/rgbd_dataset_freiburg3_long_office_household/
+  output_path: /mnt/data3/bayesianSLAM_GS/TUM_RGBD/rgbd_dataset_freiburg3_long_office_household/
+  scene_name: rgbd_dataset_freiburg3_long_office_household
+cam:
+  camera_model: equirectangular  # 360-degree panorama, 2:1 equirectangular
+  H: 512
+  W: 1024
+  depth_scale: 5000.0
+  crop_edge: 0
+var:
+  use_nlldepth: False

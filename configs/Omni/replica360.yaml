@@ -1,0 +1,8 @@
+inherit_from: configs/Omni/omni.yaml
+
+dataset_name: "replica360"
+
+data:
+  input_path: /path/to/Replica360/scene
+  output_path: /path/to/output/replica360_scene
+  scene_name: replica360_scene

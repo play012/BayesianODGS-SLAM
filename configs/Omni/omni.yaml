@@ -1,0 +1,66 @@
+project_name: "BayesianSLAM_GS_omni"
+dataset_name: "omni"
+checkpoint_path: null
+use_wandb: False
+frame_limit: -1
+seed: 0
+
+mapping:
+  new_submap_every: 50
+  map_every: 1
+  iterations: 100
+  new_submap_iterations: 100
+  new_submap_points_num: 100000
+  new_submap_gradient_points_num: 50000
+  new_frame_sample_size: 30000
+  new_points_radius: 0.0001
+  current_view_opt_iterations: 0.4
+  alpha_thre: 0.6
+  pruning_thre: 0.5
+  submap_using_motion_heuristic: False
+
+tracking:
+  gt_camera: False
+  w_color_loss: 0.6
+  iterations: 200
+  cam_rot_lr: 0.002
+  cam_trans_lr: 0.01
+  # Open3D odometry is pinhole-only, so panoramic runs must use a
+  # constant-velocity or ground-truth initialisation.
+  odometry_type: "const_speed"  # gt, const_speed
+  help_camera_initialization: False
+  init_err_ratio: 5
+  filter_alpha: True
+  filter_outlier_depth: True
+  alpha_thre: 0.98
+  soft_alpha: True
+  mask_invalid_depth: True
+  enable_exposure: False
+
+cam:
+  camera_model: equirectangular  # 360-degree panorama, 2:1 equirectangular
+  H: 512
+  W: 1024
+  depth_scale: 1.0
+  crop_edge: 0
+
+lc:
+  min_similarity: 0.5
+  pgo_edge_prune_thres: 0.25
+  voxel_size: 0.02
+  pgo_max_iterations: 500
+  registration:
+    method: "gs_reg"
+    base_lr: 5.e-3
+    min_overlap_ratio: 0.2
+    use_render: False
+  min_interval: 3
+  final: False
+
+reconstruction:
+  # Optional ground-truth paths for mesh metrics; leave unset to skip.
+  gt_mesh_path: null
+  gt_pc_path: null
+
+var:
+  use_nlldepth: False
