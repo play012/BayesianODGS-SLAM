@@ -1,21 +1,6 @@
 <div align=center>
 
-# BayesianGS-SLAM: Uncertainty-Aware Neural Rendering SLAM via Probabilistic Formulation
-
-  <p align="center">
-    <a href="https://sites.google.com/view/thithin/"><strong>Kyeongsu Kang</strong></a>
-    ·
-    <a href="https://riboha.github.io/"><strong>Seongbo Ha</strong></a>
-    ·
-    <a href="https://sibaek-lee.github.io/"><strong>Sibaek Lee</strong></a>
-    ·
-    <a href="https://bogus2000.github.io/"><strong>Hyeonwoo Yu</strong></a>
-  </p>
-
-
-<h3 align="center"> IEEE Robotics and Automation Letters, 2026 </h3>
-
- [Paper](https://ieeexplore.ieee.org/document/11727033) | [ArXiv](https://arxiv.org/abs/2609.24140) | [Video](https://www.youtube.com/watch?v=6AhWxyfViuA)
+# BayesianODGS-SLAM: Omnidirectional Gaussian Splatting SLAM based on Uncertainty-Aware Neural Rendering via Probabilistic Formulation
 
 </div>
 
@@ -32,11 +17,9 @@ variance, and analytic SE(3) camera-pose Jacobians.
 ### Clone the repository
 
 ```bash
-git clone --recurse-submodules https://github.com/Lab-of-AI-and-Robotics/BayesianGS-SLAM.git
-cd BayesianGS-SLAM
+git clone https://github.com/play012/BayesianODGS-SLAM.git
+cd BayesianODGS-SLAM
 ```
-
-For an existing checkout, initialize the submodules with `git submodule update --init --recursive`.
 
 ### Create the Conda environment
 
@@ -143,12 +126,6 @@ optimisation passes zero-initialised SE(3) leaves `theta` (rotation) and `rho`
 (translation); the renderer evaluates `T_CW = Exp([rho, theta]) @ T_CW_ref` and
 writes `dL/dtheta`, `dL/drho` back into the leaves.
 
-
-
-## Acknowledgement
-
-Our implementation builds upon [LoopSplat](https://github.com/GradientSpaces/LoopSplat), [Gaussian-SLAM](https://vladimiryugay.github.io/gaussian_slam/index.html), and [VarSplat](https://github.com/anhthuan1999/varsplat).
-
 ## Citation
 
 ```bibtex
@@ -172,3 +149,13 @@ Our implementation builds upon [LoopSplat](https://github.com/GradientSpaces/Loo
       url={https://arxiv.org/abs/2609.24140}, 
 }
 ```
+
+```bibtex
+@InProceedings{Spiss_2026_CVPR,
+    author    = {Spiss, Stefan and Hieronimy, Joey and Ritter, Marcel and Harders, Matthias},
+    title     = {{ODGS-SLAM}: {O}mnidirectional {G}aussian {S}platting {SLAM}},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2026},
+    pages     = {26114-26123}
+}```
